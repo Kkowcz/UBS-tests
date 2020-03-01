@@ -11,7 +11,7 @@ namespace UBSTask.Helpers
         {
             DF.driver.Url = "https://www.ubs.com/global/en/homepage/cookies/r-cookie-pop-up.lightbox.logo.footer_links.disclaimer_text.html";
             DF.Maximize();
-            DF.SetTimeout(10);
+            DF.SetTimeout(20);
             DF.ClickElementByXpatch("/html/body/div[1]/main/article/div/div/div/div/div/div/div[2]/div/div/div/button/span/span");
             if (startPage == "Survey")
                 startPage = "https://www.ubs.com/global/en/wealth-management/survey-weboptimization.lightbox.html";
@@ -82,7 +82,8 @@ namespace UBSTask.Helpers
                         Assert.AreEqual(DF.GetText("/html/body/div[1]/main/article/div/div/div/div/div/div[2]/form/div/div/div/div[12]/div[4]/p"), resultTxt);
                         break;
                 case "Thank you for your feedback!":
-                        Assert.AreEqual(DF.GetText("/html/body/div[1]/main/div/div/div/div/div/div/div/div/h2/span"), resultTxt);
+                    System.Threading.Thread.Sleep(1000);
+                    Assert.AreEqual(DF.GetText("/html/body/div[1]/main/div/div/div/div/div/div/div/div/h2/span"), resultTxt);
                         break;
                 default:
                     DF.driver.Quit();

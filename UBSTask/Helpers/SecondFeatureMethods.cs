@@ -11,7 +11,7 @@ namespace UBSTask.Helpers
             if (startPage == "SelfAssessment")
             {
                 startPage = "https://unique-community.ubs.com/financial-confidence?pk_campaign=#/";
-                DF.SetTimeout(10);
+                DF.SetTimeout(20);
                 DF.NavigateTo(startPage);
                 DF.Maximize();
                 DF.ClickElementByXpatch("/html/body/div[2]/div[1]/ng-include/div[1]/ng-include/div/div[2]/div/button");
@@ -50,7 +50,7 @@ namespace UBSTask.Helpers
         public void AnswerSingleQuestion(string value, string xpatch)
         {
             DF.GoUpOrDown(value);
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(1000);
             DF.ClickElementByXpatch(xpatch);
         }
 

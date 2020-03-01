@@ -1,5 +1,5 @@
 ﻿Feature: TestAutomationSecondFeature
-	In order to get knowledge how Financially confident I'am
+	In order to get knowledge on how self-assesment test works
 	As a Tester
 	I want to check, that self-assessment test always give me the same result for defined values
 

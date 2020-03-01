@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Settings\**" />
+    <EmbeddedResource Remove="Settings\**" />
+    <None Remove="Settings\**" />
+    <SpecFlowFeatureFiles Remove="Settings\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Settings\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.UnitTesting" Version="11.0.50727.1" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
@@ -21,10 +29,6 @@
     <Reference Include="System">
       <HintPath>System</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Settings\" />
   </ItemGroup>
 
   <ItemGroup>
