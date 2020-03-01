@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Edge;
+
 
 
 namespace UBSTask.Helpers
 {
     public class DriverFactory
     {
-        public IWebDriver driver = new ChromeDriver(@"C:\Users\darig\source\repos");
+        public IWebDriver driver = new ChromeDriver(Environment.CurrentDirectory);
         Random random = new Random();
        
 
@@ -100,8 +97,6 @@ namespace UBSTask.Helpers
 
 
             driver.FindElement(By.XPath(nameOfElement)).SendKeys(valueToFill);
-
-            //Console.WriteLine("Wartość pola " + nameOfElement + " = " + valueToFill);
         }
 
         //public enum DriverType

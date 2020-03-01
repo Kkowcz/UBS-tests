@@ -9,16 +9,28 @@
     <PackageReference Include="Microsoft.VisualStudio.UnitTesting" Version="11.0.50727.1" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="80.0.3987.10600" />
     <PackageReference Include="SpecFlow" Version="3.1.86" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.1.86" />
     <PackageReference Include="SpecRun.SpecFlow" Version="3.1.48" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Settings\TestsHook.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Reference Include="mscorlib">
+      <HintPath>mscorlib</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Settings\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

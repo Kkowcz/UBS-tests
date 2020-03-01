@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UBSTask.Helpers
 {
@@ -12,12 +9,14 @@ namespace UBSTask.Helpers
 
         public void FirstStep(string startPage)
         {
-             DF.driver.Url = "https://www.ubs.com/";
-            DF.ClickElementByXpatch("/html/body/div[1]/aside/div/div/div/div[2]/div/button/span");
+            DF.driver.Url = "https://www.ubs.com/global/en/homepage/cookies/r-cookie-pop-up.lightbox.logo.footer_links.disclaimer_text.html";
+            DF.Maximize();
+            DF.SetTimeout(10);
+            DF.ClickElementByXpatch("/html/body/div[1]/main/article/div/div/div/div/div/div/div[2]/div/div/div/button/span/span");
             if (startPage == "Survey")
                 startPage = "https://www.ubs.com/global/en/wealth-management/survey-weboptimization.lightbox.html";
             DF.NavigateTo(startPage);
-            DF.Maximize();
+            
         }
 
         private void FillFormWithRandomValue(bool whole)

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UBSTask.Helpers
 {
@@ -14,11 +11,12 @@ namespace UBSTask.Helpers
             if (startPage == "SelfAssessment")
             {
                 startPage = "https://unique-community.ubs.com/financial-confidence?pk_campaign=#/";
+                DF.SetTimeout(10);
                 DF.NavigateTo(startPage);
                 DF.Maximize();
                 DF.ClickElementByXpatch("/html/body/div[2]/div[1]/ng-include/div[1]/ng-include/div/div[2]/div/button");
             } 
-            DF.SetTimeout(10);
+            
         }
 
         public void Fillname(string name)

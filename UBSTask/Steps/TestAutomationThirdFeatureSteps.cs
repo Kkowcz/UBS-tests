@@ -1,5 +1,4 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UBSTask.Steps
@@ -14,11 +13,12 @@ namespace UBSTask.Steps
         [Given(@"I'm on a ""(.*)"" page")]
         public void GivenIMOnAPage(string StartPage)
         {
-            DF.driver.Url = "https://www.ubs.com/";
-            DF.ClickElementByXpatch("/html/body/div[1]/aside/div/div/div/div[2]/div/button/span");
+            DF.driver.Url = "https://www.ubs.com/global/en/homepage/cookies/r-cookie-pop-up.lightbox.logo.footer_links.disclaimer_text.html";
+            DF.SetTimeout(10);
+            DF.ClickElementByXpatch("/html/body/div[1]/main/article/div/div/div/div/div/div/div[2]/div/div/div/button/span/span");
             DF.Maximize();
             DF.NavigateTo(StartPage);
-            DF.SetTimeout(10);
+            
         }
         
         [Given(@"I also have filled whole form with ""(.*)"" answers")]
